@@ -15,7 +15,7 @@ Follow only if you start from scratch. If you clone this GitHub repo, skip this 
 npm install -g yarn
 yarn init --yes
 yarn add -D ....
-# there is a lot of package you're to install. Check package file.
+# there're a lot of packages you're to install. Check package file.
 npx hardhat init
 ```
 
