@@ -14,12 +14,8 @@ Follow only if you start from scratch. If you clone this GitHub repo, skip this 
 ```
 npm install -g yarn
 yarn init --yes
-yarn add -D hardhat
-yarn add -D typescript
-yarn add -D ts-node
-yarn add -D @nomicfoundation/hardhat-toolbox
-yarn add -D @openzeppelin/hardhat-upgrades
-yarn add -D @nomicfoundation/hardhat-ethers ethers
+yarn add -D ....
+# there is a lot of package you're to install. Check package file.
 npx hardhat init
 ```
 
