@@ -7,14 +7,14 @@ async function main() {
   const [owner, attacker] = await ethers.getSigners();
   let vault = await ethers.getContractAt(
     "InsecureEtherVault",
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
     // make sure this address is the address you just deployed
     owner,
   );
 
   let attack = await ethers.getContractAt(
     "Attack",
-    "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+    "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
     // make sure this address is the address you just deployed
     attacker,
   );
@@ -22,7 +22,7 @@ async function main() {
   console.log("--- owner deposit ---");
 
   const txn1 = await vault.connect(owner).deposit({ value: AMOUNT });
-  await txn1.wait(1);
+  // await txn1.wait(1);
   console.log(
     "vault balance: ",
     await vault.connect(attacker).getEtherBalance(),
@@ -32,7 +32,7 @@ async function main() {
   console.log("--- attack contract deposit ---");
 
   const txn2 = await attack.connect(attacker).deposit({ value: AMOUNT });
-  await txn2.wait(5);
+  // await txn2.wait(1);
   console.log(
     "vault balance: ",
     await vault.connect(attacker).getEtherBalance(),
@@ -45,7 +45,7 @@ async function main() {
 
   console.log("--- attacker contract withdraw ---");
   const txn3 = await attack.connect(attacker).attack();
-  await txn3.wait(5);
+  // await txn3.wait(1);
   console.log(
     "vault balance: ",
     await vault.connect(attacker).getEtherBalance(),

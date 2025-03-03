@@ -7,7 +7,7 @@ async function main() {
   const [owner, attacker] = await ethers.getSigners();
   vault = await ethers.getContractAt(
     "InsecureEtherVault",
-    "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
     // make sure this address is the address you just deployed
     owner,
   );
